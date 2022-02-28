@@ -1,0 +1,39 @@
+on: [push]
+
+jobs:
+  setup_deps:
+    name: Install dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup node js (v16)
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install npm deps
+        run: npm ci
+
+  check_format:
+    name: Check code format/linting
+    runs-on: ubuntu-latest
+    needs: setup_deps
+
+    steps:
+      - name: Check code format
+        run: npm run format
+
+      - name: Liniting
+        run: npm run lint
+
+  unit_test:
+    name: Run unit tests
+    runs-on: ubuntu-latest
+    needs: setup_deps
+
+    steps:
+      - name: Run unit tests
+        run: npm test
