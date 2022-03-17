@@ -44,3 +44,11 @@ jobs:
       
       - name: Check code format
         run: npm run build
+
+      - name: Store the build manifest
+        uses: actions/upload-artifact@v3
+        with:
+          name: manifest.json
+          path: ./build/manifest.json
+          if-no-files-found: error
+          retention-days: 3
