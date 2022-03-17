@@ -5,3 +5,7 @@ export function Hello(): string {
 export function AnotherHello(): string {
 	return "Well, hello again!";
 }
+
+export function YetAnotherHello(): string {
+	return "Well well well, this is getting tiresome...";
+}

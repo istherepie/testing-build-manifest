@@ -1,4 +1,4 @@
-import { Hello, AnotherHello } from "./dummy";
+import { Hello, AnotherHello, YetAnotherHello } from "./dummy";
 
 document.addEventListener("DOMContentLoaded", () => {
 	const title = document.getElementById("title");
@@ -10,4 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	title.textContent = Hello();
 
 	title.textContent = AnotherHello();
+
+	title.textContent = YetAnotherHello();
 });
