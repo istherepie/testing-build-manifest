@@ -2,7 +2,7 @@ on: [push]
 
 jobs:
   test:
-    name: Install dependencies
+    name: Check code integrity
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +27,7 @@ jobs:
         run: npm test
 
   build:
-    name: Install dependencies
+    name: Run build process
     runs-on: ubuntu-latest
 
     steps:
@@ -52,3 +52,4 @@ jobs:
           path: ./build/manifest.json
           if-no-files-found: error
           retention-days: 3
+    
