@@ -66,5 +66,5 @@ jobs:
         with:
           name: manifest.json
       
-      - name: Echo the manifest
-        run: echo manifest.json
+      - name: Print the manifest
+        run: cat manifest.json
