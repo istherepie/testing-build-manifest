@@ -67,4 +67,4 @@ jobs:
           name: manifest.json
       
       - name: Print the manifest
-        run: cat manifest.json
+        run: cat manifest.json | jq
